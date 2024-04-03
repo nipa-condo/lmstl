@@ -1,0 +1,261 @@
+@font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  src: url("./assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  src: url("./assets/fonts/Montserrat-Bold.ttf");
+}
+
+:root {
+  font-family: Montserrat;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  margin: 0;
+}
+
+.site-layout {
+  min-height: 100vh;
+}
+.app-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  padding-inline: 0 !important;
+}
+
+.app-header-inner {
+  display: flex;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.admin-header-inner {
+  display: flex;
+  width: 95%;
+  max-width: 1200px;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 12px 0px 12px 0px !important ;
+}
+
+.app-footer-inner {
+  width: 80%;
+  max-width: 1200px;
+}
+
+.admin-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 1200px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.content-inner {
+  display: flex;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  max-width: 1200px;
+  width: 80%;
+}
+
+.title-margin {
+  margin: 12px 0px 12px 0px !important;
+}
+
+.title-no-margin {
+  margin: 0;
+}
+
+.lession-container {
+  position: relative;
+  width: 100%;
+}
+
+.lession-image-container {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.15);
+}
+
+.lession-image {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.ant-radio-group {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 10px 0px 10px 12px;
+  row-gap: 30px;
+}
+.ant-form-item-label {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.upload-lession
+  .ant-upload-list-item-container
+  .ant-upload-list-item-thumbnail {
+  width: 100% !important ;
+  height: 300px !important;
+  object-fit: unset !important;
+}
+/* .ant-upload-list-item-container {
+  width: 100% !important ;
+  height: 300px !important;
+}
+
+.ant-upload-list-item-thumbnail {
+  object-fit: unset !important;
+} */
+
+.custom-checkbox-disabled .ant-checkbox-inner {
+  background-color: #1677ff; /* Change the background */
+  border-color: #fff; /* Change the border color */
+}
+
+.custom-checkbox-disabled .ant-checkbox-inner::after {
+  background-color: #1677ff; /* Change the checkmark color */
+}
+
+.custom-checkbox-disabled .ant-checkbox-checked .ant-checkbox-inner::after {
+  border-color: #fff !important; /* Change the check mark color */
+  border-left-color: transparent !important; /* Optional: Adjust if the check mark is styled with left border */
+  border-top-color: transparent !important; /* Optional: Adjust if the check mark is styled with top border */
+}
+
+.custom-checkbox-label {
+  color: #000 !important;
+}
+
+.signin-layout {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
+.signin-layout::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.container-signin-left {
+  padding: 2rem;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+.container-signin-right {
+  padding: 2rem;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+.container-content-signin {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
+.sidebar-message::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-message::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+.sidebar-message::-webkit-scrollbar-thumb {
+  background: rgb(218, 212, 212);
+  border-radius: 20px;
+}
+
+.sidebar-message::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-message::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+.sidebar-message::-webkit-scrollbar-thumb {
+  background: rgb(218, 212, 212);
+  border-radius: 20px;
+}
+
+.custom-bordered-table .ant-table-tbody > tr > td {
+  border: 1px solid #f0f0f0 !important; /* Adjust the border color */
+}
+
+@media screen and (max-width: 768px) {
+  .ant-radio-group {
+    grid-template-columns: auto;
+  }
+  .container-signin-left {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-left-radius: 0px;
+  }
+  .container-signin-right {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 24px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .ant-radio-group {
+    grid-template-columns: auto;
+  }
+
+  .signin-inner {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .container-signin-right {
+    padding: 20px;
+  }
+}

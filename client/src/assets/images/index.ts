@@ -1,0 +1,9 @@
+export { default as LogoHeader } from "../images/logo-header.png";
+export { default as BannerHome } from "../images/banner-home.png";
+export { default as PicTypeOne } from "../images/pic-type1.png";
+export { default as PicTypeTwo } from "../images/pic-type2.png";
+export { default as PicTypeThree } from "../images/pic-type3.png";
+export { default as LogoAdmin } from "../images/logo-admin.png";
+export { default as Line } from "../images/line.png";
+export { default as LineColor } from "../images/lineColor.png";
+export { default as HomePhoto } from "../images/home_photo.png";

@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    environment:
+      - VITE_APP_API_BASE_URL=${VITE_APP_API_BASE_URL}
+      - NODE_ENV=${NODE_ENV}
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT}:3000"
+    environment:
+      - POSTGRES_HOST=db
+      - PORT=${PORT}
+      - PORT_BUILD=${PORT_BUILD}
+      - NODE_ENV=${NODE_ENV}
+      - APP_ENV=${APP_ENV}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - JWT_ACCESS_TOKEN_PRIVATE_KEY=${JWT_ACCESS_TOKEN_PRIVATE_KEY}
+      - JWT_ACCESS_TOKEN_PUBLIC_KEY=${JWT_ACCESS_TOKEN_PUBLIC_KEY}
+      - CREDENTIALS=${CREDENTIALS}
+      - URL_GOOGLE_STORAGE=${URL_GOOGLE_STORAGE}
+      - GOOGLE_BUCKET_NAME=${GOOGLE_BUCKET_NAME}
+      - GOOGLE_PROJECT_ID=${GOOGLE_PROJECT_ID}
+      - GOOGLE_CREDENTIALS=${GOOGLE_CREDENTIALS}
+
+  db:
+    image: "postgres:13.6"
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - "db_data:/var/lib/postgresql/data/"
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+volumes:
+  db_data:
